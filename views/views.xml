@@ -1,0 +1,71 @@
+<odoo>   
+
+    <record id="view_tree_todo" model="ir.ui.view">
+        <field name="name">view.tree.todo</field> 
+        <field name="model">md.todo</field> 
+        <field name="arch" type="xml"> 
+            <tree> 
+                <field name="name"/> 
+                <field name="status"/> 
+            </tree>        
+        </field> 
+    </record>   
+    
+    <record id="view_form_todo" model="ir.ui.view">
+        <field name="name">view.form.todo</field>
+        <field name="model">md.todo</field>         
+        <field name="arch" type="xml">
+            <form string="Actividades">
+                <sheet>
+                    <notebook>
+                        <page name="Actividad" string="Actividad">
+                            <group colspan="2">
+                                <field name="name" string="Descripción" required="1"/>
+                                <field name="status" string="Estado" required="1"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="todo_pivot_view" model="ir.ui.view">
+        <field name="name">todo_pivot_view</field>
+        <field name="model">md.todo</field>
+        <field name="arch" type="xml">
+            <pivot string="Actividades">
+                
+                <field name="name" string="Nombre" type="row"/>
+                <field name="status" string="Estatus" type="col"/>
+            </pivot>
+        </field>
+    </record>
+    
+    <record id="view_graph_todo" model="ir.ui.view">
+        <field name="name">view.graph.todo</field> 
+        <field name="model">md.todo</field> 
+        <field name="arch" type="xml"> 
+            <graph string="Actividades Realizadas" type="pie"> 
+                <field name="name" /> 
+                <field name="status"/> 
+            </graph>        
+        </field> 
+    </record>    
+
+    <record id="action_view_todo" model="ir.actions.act_window">
+        <field name="name">Lista de Actividades</field> 
+        <field name="res_model">md.todo</field> 
+        <field name="view_mode">tree,form,search,pivot,graph</field> 
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+
+                No existen actividades registradas todavia.
+
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="menu_root_todo" parent="" action="todo.action_view_todo"/> 
+
+
+</odoo>

@@ -1,0 +1,112 @@
+<!-- <?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+
+   <data>
+
+       <template id="reporte_template">
+
+           <t t-call="web.html_container">
+
+               <t t-foreach="docs" t-as="doc">
+
+                   <t t-call="web.external_layout">
+
+                       <div class="page">
+
+                           <h1 class="text-center text-info">
+
+                               <span>Reporte</span>
+
+                           </h1>
+
+                           <strong>Actividades: </strong>
+
+                           <hr/>
+
+                           <div class="table border-table">
+
+                               <div class="row bg-info">
+
+                                   <div class="col-4" style="border-top:1px solid black;">
+
+                                       <span >Descripción</span>
+
+                                   </div>
+
+                                   <div class="col-4" style="border-top:1px solid black;">
+
+                                       <span >Estado</span>
+
+                                   </div>
+
+                               </div>
+
+                               <t t-foreach="doc.o2m_ids" t-as="item">
+
+                                   <div class="row">
+
+                                   <div class="col-4" style="border-top:1px solid black;">
+
+                                       <span t-esc="item.campo1"/>
+
+                                   </div>
+
+                                   <div class="col-4" style="border-top:1px solid black;">
+
+                                       <span t-esc="item.campo2"/>
+
+                                   </div>
+                                   
+
+                              	 </div>
+
+                               </t>
+
+                           </div>
+
+                       </div>
+
+                   </t>
+
+               </t>
+
+           </t>
+
+       </template>
+
+       <report
+
+               id="report_html_menu"
+
+               model="report.example"
+
+               string="Reporte HTML"
+
+               name="pdf_report_example.report_example_template"
+
+               file="pdf_report_example.report_example_template"
+
+               report_type="qweb-html"
+
+               menu="True"/>
+
+        <report
+
+               id="report_pdf_menu"
+
+               model="report.example"
+
+               string="Reporte PDF"
+
+               name="pdf_report_example.report_example_template"
+
+               file="pdf_report_example.report_example_template"
+
+               report_type="qweb-pdf"
+
+               menu="True"/>
+
+   </data>
+
+</odoo> -->
